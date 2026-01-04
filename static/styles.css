@@ -1,0 +1,178 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+form {
+  background: #ffffff;
+  width: 100%;
+  max-width: 600px;
+  padding: 35px 40px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  animation: fadeSlide 0.8s ease;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1f2937;
+  font-size: 28px;
+}
+
+h3 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  color: #374151;
+  font-size: 16px;
+}
+
+/* ===== INPUTS ===== */
+input[type="file"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Focus effect */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ===== BUTTON ===== */
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Button hover animation */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* ===== RESULTS SECTION ===== */
+h2 {
+  text-align: center;
+  margin-top: 30px;
+  color: #8b310d;
+}
+
+ul {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+li {
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  form {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+/* PAGE TITLE */
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #065f46;;
+}
+
+/* FORM CONTAINER */
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* RESULTS */
+.results-container {
+  margin-top: 40px;
+  background: #ffffff;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* SKILLS GRID */
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .skills {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* JOB ROLE TITLE */
+.job-role-title {
+  text-align: center;
+  color: #065f46;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+

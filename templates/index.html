@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Job Match Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+  <!-- PAGE WRAPPER -->
+  <div class="page">
+
+    <!-- HEADING -->
+    <h1 class="page-title">Resume Job Match Analyzer</h1>
+    
+    <!-- FORM -->
+    <div class="form-container">
+      <form method="POST" enctype="multipart/form-data">
+
+        <h3>Upload Resume (PDF)</h3>
+        <input type="file" name="resume_pdf" accept=".pdf">
+
+        <h3>OR Paste Resume Text</h3>
+        <textarea name="resume_text" rows="8"></textarea>
+
+        <h3>Select Job Role</h3>
+        <select name="job_role" required>
+          <option value="">-- Select Role --</option>
+          <option value="Python Developer">Python Developer</option>
+          <option value="Web Developer">Web Developer</option>
+          <option value="Data Analyst">Data Analyst</option>
+          <option value="Java Developer">Java Developer</option>
+        </select>
+
+        <button type="submit">Analyze Resume</button>
+      </form>
+    </div>
+
+    <!-- RESULTS (ALWAYS BELOW FORM) -->
+    {% if score %}
+    <div class="results-container">
+      <h2 class="job-role-title">{{ job_role }}</h2>
+      <h2>Job Match Score: {{ score }}%</h2>
+
+      <div class="skills">
+        <div>
+          <h3>Matched Skills ({{ matched|length }})</h3>
+          <ul>
+            {% for skill in matched %}
+              <li>{{ skill }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div>
+          <h3>Missing Skills ({{ missing|length }})</h3>
+          <ul>
+            {% for skill in missing %}
+              <li>{{ skill }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</body>
+
+</html>
