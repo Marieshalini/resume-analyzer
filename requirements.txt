@@ -2,3 +2,4 @@ Flask
 scikit-learn
 PyPDF2
 nltk
+gunicorn
